@@ -48,7 +48,7 @@ object hotItems_analysis {
     //控制台输出
     processedStream.print()
 
-    env.execute("hot items job")
+    env.execute()
   }
 }
 //定义预聚合函数
@@ -112,6 +112,7 @@ class TopNHotItems(topSize:Int) extends KeyedProcessFunction[Long,ItemViewCount,
     //控制输出频率
     Thread.sleep(1000)
     out.collect(result.toString())
+
 
   }
 
